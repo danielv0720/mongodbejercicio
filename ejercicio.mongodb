@@ -1,0 +1,12 @@
+//buscar por nombre
+db.pokedata.find({name: {$eq:"Snorlax",}}).pretty()
+db.pokedata.find({name: {$eq:"Dratini"}}).pretty()
+db.pokedata.find({name: {$eq:"Charmander"}}).pretty()
+db.pokedata.find({name: {$eq:"Magikarp"}}).pretty()
+
+//buscar por id
+db.pokedata.find({$or: [{id:{$eq:"123"}},{id:{$eq:"151"}},{id:{$eq:"025"}},{id:{$eq:"035"}}]},{name:1,_id:0}).pretty()
+
+//buscar por id y nombre
+db.pokedata.find({$or: [{id:{$eq:"123"}},{id:{$eq:"151"}},{id:{$eq:"025"}},{id:{$eq:"035"}},{name:{$eq:"Snorlax"}},{name:{$eq:"Dratini"}},{name:{$eq:"Charmander"}},{name:{$eq:"Magikarp"}}]},{name:1,_id:0}).pretty()
+
